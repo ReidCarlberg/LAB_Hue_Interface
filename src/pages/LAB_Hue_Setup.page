@@ -1,0 +1,23 @@
+<apex:page controller="LAB_Hue_SetupController" >
+ 
+    <apex:form >     
+        <apex:pageBlock title="Hue Controller Setup">
+            <apex:outputPanel id="rerenderOnComplete">
+            <apex:outputPanel rendered="{!setupComplete}" id="complete">
+                <p>Congrats Your Push Topic Setup is Complete</p>
+                <p>You can now return to the main <a href="/apex/Hue">Hue Interface</a></p>
+                <p>You can explore Streaming Push Topics in the <a href="http://workbench.developerforce.com">Workbench</a>.</p>
+            </apex:outputPanel>
+            <apex:outputPanel rendered="{!!setupComplete}" id="notcomplete">
+                <p>The Hue demo uses the Salesforce Streaming API.</p>
+                <p>Before you can use the Streaming API, you need to insert a Push Topic.</p>
+                <p>Just click the button.</p>
+                <p><apex:commandButton action="{!handlePushTopic}" value="Insert The Push Topic" reRender="rerenderOnComplete" /></p>
+            </apex:outputPanel>    
+
+                <p>What is a <a href="http://www.salesforce.com/us/developer/docs/api/Content/pushtopic.htm">Push Topic</a>?</p>
+                
+                </apex:outputPanel>    
+        </apex:pageBlock>        
+    </apex:form>
+</apex:page>

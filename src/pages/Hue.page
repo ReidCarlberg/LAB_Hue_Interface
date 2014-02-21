@@ -1,0 +1,26 @@
+<apex:page controller="LAB_HueController" standardStylesheets="false" showHeader="false">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" ></link> 
+    <h1>Hue Controller</h1>
+    
+    <apex:form >
+        
+    <apex:outputPanel rendered="{!!setupComplete}">
+        <h1>IMPORTANT</h1>
+        <p>Your setup is not yet complete.</p>
+        <p><apex:outputLink styleClass="btn btn-lg btn-warning" value="/apex/LAB_Hue_Setup">COMPLETE SETUP</apex:outputLink></p>
+    </apex:outputPanel>
+    
+	<apex:outputPanel rendered="{!setupComplete}">
+        <p><apex:commandButton action="{!allOn}" value="All On" styleClass="btn btn-lg btn-primary" />&nbsp;&nbsp;
+        <apex:commandButton action="{!allOff}" value="All Off" styleClass="btn btn-lg btn-primary" /></p>
+        
+        <p><apex:commandButton action="{!allWhite}" value="All White" styleClass="btn btn-lg btn-primary" />&nbsp;&nbsp;
+        <apex:commandButton action="{!allRed}" value="All Red" styleClass="btn btn-lg btn-primary"/></p>
+         
+        <p><apex:commandButton action="{!siren}" value="Siren" styleClass="btn btn-lg btn-primary"/></p>        
+        <p><apex:commandButton action="{!random}" value="Random" styleClass="btn btn-lg btn-primary"/></p>        
+        </apex:outputPanel>
+    </apex:form>
+       
+	<p><a href="/">Home</a></p>
+</apex:page>
